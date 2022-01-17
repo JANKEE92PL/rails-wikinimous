@@ -9,13 +9,15 @@
   </tr>
   </thead>
 
-  <tbody>
+  <tbody style="color: white !important;">
   <% @articles.each do |article| %>
-    <div class="container">
-      <p><%= link_to 'Show', article %></p>
-      <p><%= link_to 'Edit', edit_article_path(article) %></p>
-      <p><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <div class="container d-flex p-2 text-light">
+      <p class="mr-auto p-2 bg-info rounded-1"><%= article.title %></p>
+      <p class="p-2 mx-2 btn btn-primary text-light"><%= link_to 'Show', article %></p>
+      <p class="p-2 mx-1 btn btn-success"><%= link_to 'Edit', edit_article_path(article) %></p>
+      <p class="p-2 mx-1 btn btn-warning text-light"><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
+
   <% end %>
   </tbody>
 </table>
